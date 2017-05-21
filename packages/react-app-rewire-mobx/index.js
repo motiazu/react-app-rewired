@@ -4,7 +4,7 @@ const babelLoader = function (conf) {
 
 //webpack2
 function rewireMobX(config, env) {
-  const babelrc = config.module.rules.find(babelLoader).options;
+  const babelrc = config.module.loaders.find(babelLoader).options;
   babelrc.plugins = ['transform-decorators-legacy'].concat(babelrc.plugins || []);
   return config;
 }
